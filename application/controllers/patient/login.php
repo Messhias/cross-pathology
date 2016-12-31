@@ -58,5 +58,8 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="<?=site_url('assets/js/jquery.form.min.js') ?>"></script>
+
   </body>
 </html>

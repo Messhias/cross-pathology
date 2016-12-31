@@ -30,13 +30,14 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <form name="frmLoginAdmin" method="post" id="frmLoginAdmin" action="<?=site_url('ajax/login'); ?>">
               <h1>Login Form</h1>
+              <input type="hidden" name="type" id='type' value="admin">
               <div>
-                <input type="email" class="form-control" placeholder="Username" required="" />
+                <input type="email" name="username" id="username" class="form-control" placeholder="Username" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" id="pass" name="pass" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
                 <button type='sbumit' class="btn btn-default submit"> Log in </button>
@@ -58,5 +59,30 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="<?=site_url('assets/js/jquery-3.1.min.js') ?>"></script>
+
+    <script type="text/javascript" src="<?=site_url('assets/js/jquery.form.min.js') ?>"></script>
+
+    <script type='text/javascript'>
+    $(document).ready(function() {
+      var login = {
+        beforeSend:function(){
+
+        },
+        error:function(e){
+
+        },
+        success:function(success){
+          console.log(success);
+        },
+        complete:function(){
+
+        }
+      }
+
+      $("#frmLoginAdmin").ajaxForm(login);
+    });
+    </script>
   </body>
 </html>
