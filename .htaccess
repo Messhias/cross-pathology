@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+ 	RewriteEngine on
+	RewriteBase /cross-pathology/
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ /cross-pathology/index.php?/$1 [L] 
+</IfModule>
