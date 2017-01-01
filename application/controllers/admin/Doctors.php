@@ -8,9 +8,10 @@
  * @filesource
 */
 
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Doctors extends CI_Controller {
 
 	/**
 	*
@@ -29,7 +30,6 @@ class Dashboard extends CI_Controller {
 		}
 	}
 
-
 	/**
 	* FUNCTION INDEX
 	* @return view
@@ -45,10 +45,34 @@ class Dashboard extends CI_Controller {
 			)
 		);
 		
+		$this->template->view('admin/doctor/index',array(
+				'doctors' 	=>	$this->doctor_model->all()
+			)
+		);
 		$this->template->footer('','admin/template/footer','','');
+	}
+
+
+	/**
+	* FUNCTION INDEX
+	* @return view
+	**/
+	public function newDoctor(){
+
+		$this->template->header("ADMIN - NEW DOCTOR",'admin/template/header',"admin", "", "", "","",'nav-md');
+		$this->template->menu('','admin/template/menu','','','','',array()
+			,'',
+			array(
+				'index'		=>'',
+				'products' 	=> ''
+			)
+		);
+		
+		$this->template->view('admin/doctor/new');
+		$this->template->footer('','admin/template/footer','doctor','doctor');
 	}
 
 }
 
-/* End of file Dashboard.php */
-/* Location: ./application/controllers/admin/Dashboard.php */
+/* End of file Doctor.php */
+/* Location: ./application/controllers/admin/Doctor.php */

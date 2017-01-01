@@ -58,31 +58,16 @@
                     </ul>
                   </li>
 
-                  <li><a class='menu' href="<?=site_url('admin/orders') ?>"><i class="fa fa-reorder"></i> Exams </span></a></li>
+                  <li><a class='menu' href="<?=site_url('admin/orders') ?>"><i class="fa fa-reorder"></i> Exams </i></a></li>
 
 
+                      <li> <a class='menu' href="<?=site_url('admin/patients/new-patient') ?>"> <span class="glyphicon glyphicon-off"></span> Logout</a></li>
 
                 </ul>
               </div>
             </div>
             <!-- /sidebar menu -->
 
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
           </div>
         </div>
 
@@ -98,18 +83,7 @@
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <img src="images/img.jpg" alt="">Administrator
-                    <span class=" fa fa-angle-down"></span>
                   </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <!-- <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li> -->
-                    <li><a href="<?=site_url('logout') ?>"><i class="fa fa-sign-out pull-right"></i>SAIR</a></li>
-                  </ul>
                 </li>
 
                 
