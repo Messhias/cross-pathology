@@ -17,6 +17,26 @@ class Login extends CI_Controller {
 		try {
 
 			
+			$this->session->set_userdata( $this->user_model->select(
+						array(
+							'nm_user'	=>	$this->input->post('username'),
+							'ds_pass'	=>	$this->input->post('pass'),
+							'ic_active'	=>	1,
+						)
+					) 
+			);
+
+			return $this->json->dieJSON(
+				array(
+					'results'	=>	$this->user_model->select(
+						array(
+							'nm_user'	=>	$this->input->post('username'),
+							'ds_pass'	=>	$this->input->post('pass'),
+							'ic_active'	=>	1,
+						)
+					)
+				)
+			);
 			
 		} catch (Exception $e) {
 			$this->json->dieJSON($e);

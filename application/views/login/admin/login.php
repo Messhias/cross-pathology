@@ -16,10 +16,11 @@
     <!-- NProgress -->
     <link href="<?=site_url('assets/vendors/nprogress/nprogress.css') ?>" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">
+    <link href="<?=site_url('assets/build/css/animate.min.css') ?>" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="<?=site_url('assets/build/css/custom.min.css') ?>" rel="stylesheet">
+    <link href="<?=site_url('assets/build/css/loading.css') ?>" rel="stylesheet">
   </head>
 
   <body class="login">
@@ -61,28 +62,43 @@
     </div>
 
     <script type="text/javascript" src="<?=site_url('assets/js/jquery-3.1.min.js') ?>"></script>
+    <script type="text/javascript" src="<?=site_url('assets/js/functions.js') ?>"></script>
+    
 
     <script type="text/javascript" src="<?=site_url('assets/js/jquery.form.min.js') ?>"></script>
 
     <script type='text/javascript'>
-    $(document).ready(function() {
-      var login = {
-        beforeSend:function(){
+      $(document).ready(function() {
+        var login = {
+          beforeSend:function(){
+            $(".loadingMask").css('display', 'block');
+          },
+          error:function(e){
 
-        },
-        error:function(e){
+          },
+          success:function(success){
+            if(success.results.num_rows > 0 ){
+              window.location = url_development + 'admin/dashboard';
+            }else{
+              alert('User and / or password incorrect');
+            }
+          },
+          complete:function(){
 
-        },
-        success:function(success){
-          console.log(success);
-        },
-        complete:function(){
-
+          }
         }
-      }
 
-      $("#frmLoginAdmin").ajaxForm(login);
-    });
+        $("#frmLoginAdmin").ajaxForm(login);
+      });
     </script>
+
+    <div class='loadingMask'>
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+
   </body>
 </html>
